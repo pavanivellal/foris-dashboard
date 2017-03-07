@@ -26,7 +26,17 @@
 
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" rel="stylesheet">
-    <!-- Start of Graph -->
+
+    <!-- Importing content of Angular -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--             -->
+
+
+     <!-- Start of Graph -->
     <script type="text/javascript">
     window.onload = function () {
       var chart = new CanvasJS.Chart("chartContainer",
@@ -215,12 +225,54 @@
       chart.render();
     }
   </script>
+
+    <script>
+        var app = angular.module("forisApp", []);
+        app.controller("homeCtrl", ['$scope', '$http', '$window', function( $scope,$http,$window) {
+            $http({
+                method: 'GET',
+                url: '/checklogin'
+            }).then(function (response) {
+                if (response.data.status === 300) {
+                    $window.location.href = '/login';
+                }
+
+            });
+
+            $scope.signin = function () {
+                var in_name = $scope.name;
+                var in_password = $scope.password;
+                if (in_name == null || in_name == "") {
+                    alert("Username cannot be empty!!");
+                    return;
+                }
+                if (in_password == null || in_password == "") {
+                    alert("password cannot be empty!!");
+                    return;
+                }
+                alert($scope.name + $scope.password);
+                $http({
+                    method: 'POST',
+                    url: '/signin',
+                    data: {"name": in_name, "password": in_password}
+                }).then(function (response) {
+                    if (response.data.status == 100) {
+                        alert("Invalid User and Password!");
+                    }
+                    else {
+                        $window.location.href = '/home';
+                    }
+                });
+            }
+        }]);
+
+    </script>
   <script src="/javascripts/canvasjs.min.js"></script>
   <!-- End of Graph -->
   </head>
 
   <body class="nav-md">
-    <div class="container body">
+    <div class="container body" ng-app="forisApp" ng-controller="homeCtrl">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
