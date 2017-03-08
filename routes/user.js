@@ -90,33 +90,24 @@ exports.signup = function(req, res) {
         devid = req.param("devid");
 
     // read a document
-    database.fetchData(function(err, results) {
+    database.createUser(function(err, results) {
         if (err) {
-            // throw err;
-            // console.log("Error. Please contact Administrator");
-            // res.send({
-            //     "status" : 411
-            // });
+           // throw err;
+            console.log("Error message: " + err.description + ". Reason: " + err.reason);
+
+            res.send({
+                "status" : err.statusCode
+            });
         } else {
 
-            // if(results.pwd == password )
-            // {
-            //     req.session.uname = results._id;
-            //     console.log("Session name: " + req.session.uname);
-            //     console.log("success");
-            //     res.render('home');
-            // }
-            // else
-            // {
-            //     console.log("Invalid User Name & Password");
-            //     res.send({
-            //         "status" : 100
-            //     });
-            //
-            // }
+            req.session.uname = name;
+            console.log("Session name: " + req.session.uname);
+            console.log("success");
+            res.render('home');
+
         }
 
-    },variables.foris_users,name);
+    },variables.foris_users,name,email,password,devid);
 
 };
 

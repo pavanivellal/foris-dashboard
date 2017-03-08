@@ -32,4 +32,15 @@ function fetchData(callback,dbName,docID){
     });
 }
 
+function createUser(callback,dbName,docID,email,password,devid){
+    console.log("Creating document " + docID);
+    var db=getConnection(dbName);
+    db.insert({ _id: docID, pwd: password, email: email, user_type: "C", device_id:devid }, function(err, data) {
+    console.log("Error:", err);
+    console.log("Data:", data);
+    callback(err, data);
+  });
+}
+
 exports.fetchData=fetchData;
+exports.createUser=createUser;

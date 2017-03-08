@@ -101,7 +101,7 @@
                   url: '/signup',
                   data: {"name": in_name, "password": in_password, "email": in_email, "devid": in_deviceID}
               }).then(function (response) {
-                  if (response.data.status == 100) {
+                  if (response.data.status == 409) {
                       alert("Record exists. Please Login");
                   }
                   else if(response.data.status == 411)
