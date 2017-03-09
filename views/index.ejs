@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Foris.io!</title>
+    <title>foris-io</title>
 
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,13 +25,14 @@
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="stylesheets/custom.min.css" rel="stylesheet">
+    <link href="/stylesheets/custom.min.css" rel="stylesheet">
 
     <!-- Importing content of Angular -->
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Do not include the below bootstrap library -->
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
     <!--             -->
 
@@ -43,15 +44,15 @@
     {
       title:{
         text: "Sensor Readings",
-  
+
       },
 
       axisX:{
         title: "time",
         gridThickness: 2,
-        interval:2, 
-        intervalType: "seconds",        
-        valueFormatString: "HH mm ss", 
+        interval:2,
+        intervalType: "seconds",
+        valueFormatString: "HH mm ss",
         labelAngle: -20
       },
       toolTip: {
@@ -61,7 +62,7 @@
         title: "scale"
       },
       data: [
-      {        
+      {
         type: "line",
         showInLegend: true,
         lineThickness: 2,
@@ -84,24 +85,24 @@
 //     $timestamp = $json[$x]->timestamp;
 //     // if($temp != null)
 //     // {
-//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $temp. "}";   
+//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $temp. "}";
 
 //   //echo $str;
 
 //      if($x < (count($json)-1))
 //      {
 //         $str = $str . ",";
-//      }  
+//      }
 
 //      echo $str;
 //   //}
-  
-// } 
+
+// }
 // ?>
   //End of graph data
         ]
       },
-      {        
+      {
         type: "line",
           showInLegend: true,
           name: "Moisture",
@@ -124,23 +125,23 @@
 
 //     // if($moisture != NULL)
 //     // {
-//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $moisture. "}";   
+//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $moisture. "}";
 
 //   //echo $str;
 
 //      if($x < (count($json)-1))
 //      {
 //         $str = $str . ",";
-//      }  
+//      }
 
 //      echo $str;
-//    // } 
-// } 
+//    // }
+// }
 // ?>
   //End of graph data
         ]
       },
-      {        
+      {
         type: "line",
           showInLegend: true,
           name: "Ph",
@@ -165,14 +166,14 @@
 //     {
 //     $Ph = 0;
 //   }
-//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $Ph. "}";   
+//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $Ph. "}";
 
 //   //echo $str;
 
 //      if($x < (count($json)-1))
 //      {
 //         $str = $str . ",";
-//      }  
+//      }
 
 //      echo $str;
 
@@ -181,7 +182,7 @@
   //End of graph data
         ]
       },
-      {        
+      {
         type: "line",
           showInLegend: true,
           name: "Salinity",
@@ -197,24 +198,24 @@
 // $str = "";
 
 // for ($x = 0; $x < count($json); $x++) {
-    
+
 //     $Salinity = $json[$x]->sensor->Salinity;
 //     $timestamp = $json[$x]->timestamp;
 
 //     // if($Salinity != NULL)
 //     // {
-//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $Salinity. "}";   
+//     $str = "{x: new Date(Date.UTC (" . substr($timestamp, 0, 4) .",". substr($timestamp, 5, 2) ."," .substr($timestamp, 8, 2) .",". substr($timestamp, 11, 2) .",". substr($timestamp, 14, 2) . " ) ), y: " . $Salinity. "}";
 
 //   //echo $str;
 
 //      if($x < (count($json)-1))
 //      {
 //         $str = $str . ",";
-//      }  
+//      }
 
 //      echo $str;
 //  // }
-// } 
+// }
 // ?>
   //End of graph data
         ]
@@ -236,34 +237,40 @@
                 if (response.data.status === 300) {
                     $window.location.href = '/login';
                 }
+                else  if(response.data.status === 200)
+                {
+                    $http({
+                        method: 'GET',
+                        url: '/profileusername'
+                    }).
+                    then(function(response)
+                    {
+                        $scope.loginusername = angular.fromJson(response.data.result);
+
+                    });
+                }
 
             });
 
-            $scope.signin = function () {
-                var in_name = $scope.name;
-                var in_password = $scope.password;
-                if (in_name == null || in_name == "") {
-                    alert("Username cannot be empty!!");
-                    return;
-                }
-                if (in_password == null || in_password == "") {
-                    alert("password cannot be empty!!");
-                    return;
-                }
-                alert($scope.name + $scope.password);
+            $scope.logoutsession= function ()
+            {
                 $http({
-                    method: 'POST',
-                    url: '/signin',
-                    data: {"name": in_name, "password": in_password}
-                }).then(function (response) {
-                    if (response.data.status == 100) {
-                        alert("Invalid User and Password!");
-                    }
-                    else {
-                        $window.location.href = '/home';
+                    method: 'GET',
+                    url: '/logoutsession'
+                }).
+                then(function(response)
+                {
+                    if(response.data.status===300)
+                    {
+                        console.log("destroy session");
+                    }else
+                    {
+                        $window.location.href='/';
                     }
                 });
             }
+
+
         }]);
 
     </script>
@@ -277,7 +284,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><span><img src="/images/forisLogo.png" alt="Logo" height="42" width="150"align="middle" style="margin:0px 28px">
+              <a href="/home" class="site_title"><span><img src="/images/forisLogo.png" alt="Logo" height="42" width="150"align="middle" style="margin:0px 28px">
               </span></a>
             </div>
 
@@ -290,7 +297,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{{loginusername.fname}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -304,7 +311,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.php">Dashboard</a></li>
+                      <li><a href="/home">Dashboard</a></li>
                       <!-- <li><a href="index2.php">Dashboard2</a></li>
                       <li><a href="index3.php">Dashboard3</a></li> -->
                     </ul>
@@ -334,12 +341,12 @@
                   </li-->
                   <li><a><i class="fa fa-table"></i> Sensors <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.php">Water Consumption</a></li>
-                      <li><a href="moisture.php">Moisture</a></li>
-                      <li><a href="temperature.php">Temperature</a></li>
-                      <li><a href="humidity.php">Humidity</a></li>
-                      <li><a href="pH.php">pH</a></li>
-                      <li><a href="salinity.php">Salinity</a></li>
+                      <li><a href="/water">Water Consumption</a></li>
+                      <li><a href="/moisture">Moisture</a></li>
+                      <li><a href="/temperature">Temperature</a></li>
+                      <li><a href="/humidity">Humidity</a></li>
+                      <li><a href="/pH">pH</a></li>
+                      <li><a href="/salinity">Salinity</a></li>
                     </ul>
                   </li>
                   <li><a href="http://35.165.92.223:9000/"><i class="fa fa-globe"></i> Sensor Topology</a>
@@ -390,7 +397,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>                  
+                  </li>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div> -->
@@ -428,7 +435,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="/images/img.jpg" alt="">John Doe
+                    <img src="images/img.jpg" alt="">{{loginusername.fname}}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -440,9 +447,10 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a type="submit" ng-click="logoutsession()" role="button"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
+
 
                 <li role="presentation" class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
@@ -1109,7 +1117,7 @@ The project used GPS technology to program a combine's route on a farm's durum w
                   </div>
                 </div>
                 <!-- End to do list -->
-                
+
                 <!-- start of weather widget -->
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="x_panel">
@@ -1434,7 +1442,7 @@ The project used GPS technology to program a combine's route on a farm's durum w
       });
     </script>
     <!-- /Doughnut Chart -->
-    
+
     <!-- bootstrap-daterangepicker -->
     <script>
       $(document).ready(function() {

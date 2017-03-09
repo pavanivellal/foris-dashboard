@@ -34,11 +34,20 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/login',user.login);
-app.get('/home',user.home);
-app.get('/humidity',user.humidity);
 app.get('/checklogin', user.checklogin);
 app.post('/signin',user.signin);
 app.post('/signup',user.signup);
+app.get('/profileusername', user.profileusername);
+app.get('/logoutsession',user.logoutsession);
+
+//pages
+app.get('/home',user.home);
+app.get('/humidity',user.humidity);
+app.get('/water',user.water);
+app.get('/temperature',user.temperature);
+app.get('/moisture',user.moisture);
+app.get('/pH',user.pH);
+app.get('/salinity',user.salinity);
 
 
 http.createServer(app).listen(app.get('port'), function(){

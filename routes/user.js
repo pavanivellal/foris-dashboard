@@ -10,20 +10,46 @@ exports.list = function(req, res){
 };
 
 function login(req,res){
-	res.render('login', { title: 'Login' });
+	res.render('login', { title: variables.page_title + ' Login' });
 }
 
 function home(req,res){
-	res.render('index', { title: 'Home' });
+	res.render('index', { title: variables.page_title + ' Home' });
 }
 
 function humidity(req,res){
-	res.render('humidity', { title: 'Humidity' });
+	res.render('humidity', { title: variables.page_title + ' Humidity' });
+}
+
+function water(req,res){
+    res.render('water', { title: variables.page_title + ' Water' });
+}
+
+function moisture(req,res){
+    res.render('moisture', { title: variables.page_title + ' Moisture' });
+}
+
+function temperature(req,res){
+    res.render('temperature', { title: variables.page_title + ' Temperature' });
+}
+
+function pH(req,res){
+    res.render('pH', { title: variables.page_title + ' pH' });
+}
+
+function salinity(req,res){
+    res.render('salinity', { title: variables.page_title + ' salinity' });
 }
 
 exports.login = login;
 exports.home = home;
 exports.humidity = humidity;
+exports.water    = water;
+exports.moisture = moisture;
+exports.temperature = temperature;
+exports.pH = pH;
+exports.salinity = salinity;
+
 
 //MAINTAINING SESSION LOGIN
 exports.checklogin = function(req, res) {
@@ -111,3 +137,34 @@ exports.signup = function(req, res) {
 
 };
 
+//Get Profile Details////////////////////////////////////////////////
+exports.profileusername = function(req, res){
+    console.log("Inside profileusername");
+    var name = req.session.uname;
+    console.log(req.session.uname);
+    database.fetchData(function(err, results) {
+        if (err) {
+            console.log("Unable to get user details");
+            res.send({
+                "status" : 100
+            });
+        } else {
+            console.log(results);
+            var jsonstr=JSON.stringify(results);
+            console.log(jsonstr);
+            console.log("Entry successfully fethced and displayed on PROFILE GUI");
+            //res.send(JSON.stringify(results));
+            res.send({"result":jsonstr});
+        }
+    }, variables.foris_users, name);
+
+};
+
+//Logout session
+exports.logoutsession = function(req, res) {
+    console.log("checking logout");
+    req.session.destroy();
+    res.send({
+        "status" : 200
+    });
+};

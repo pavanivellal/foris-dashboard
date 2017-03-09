@@ -3,5 +3,6 @@
  */
 
 module.exports = {
-    foris_users: 'foris_users' // DB name in cloudant for foris users
+    foris_users: 'foris_users', // DB name in cloudant for foris users
+    page_title: 'foris-io' // page title
 };
