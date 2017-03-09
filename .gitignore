@@ -5,3 +5,4 @@ node_modules
 README.md
 .idea
 test_cloudant.js
+home_test.ejs

@@ -18,27 +18,27 @@ function home(req,res){
 }
 
 function humidity(req,res){
-	res.render('humidity', { title: variables.page_title + ' Humidity' });
+	res.render('humidity', { title: 'Humidity' });
 }
 
 function water(req,res){
-    res.render('water', { title: variables.page_title + ' Water' });
+    res.render('water', { title: 'Water' });
 }
 
 function moisture(req,res){
-    res.render('moisture', { title: variables.page_title + ' Moisture' });
+    res.render('moisture', { title: 'Moisture' });
 }
 
 function temperature(req,res){
-    res.render('temperature', { title: variables.page_title + ' Temperature' });
+    res.render('temperature', { title: 'Temperature' });
 }
 
 function pH(req,res){
-    res.render('pH', { title: variables.page_title + ' pH' });
+    res.render('pH', { title: 'pH' });
 }
 
 function salinity(req,res){
-    res.render('salinity', { title: variables.page_title + ' salinity' });
+    res.render('salinity', { title: 'salinity' });
 }
 
 exports.login = login;
@@ -89,7 +89,7 @@ exports.signin = function(req, res) {
                 req.session.uname = results._id;
                 console.log("Session name: " + req.session.uname);
                 console.log("success");
-                res.render('home');
+                res.render('index');
             }
             else
             {
@@ -109,8 +109,10 @@ exports.signin = function(req, res) {
 exports.signup = function(req, res) {
 
     console.log("Inside Signup");
-    console.log(req.param("name", "password", "email", "devid"));
+    console.log(req.param("name", "fname", "lname", "password", "email", "devid"));
     var name = req.param("name"),
+        fname = req.param("fname"),
+        lname = req.param("lname"),
         password = req.param("password"),
         email = req.param("email"),
         devid = req.param("devid");
@@ -129,11 +131,11 @@ exports.signup = function(req, res) {
             req.session.uname = name;
             console.log("Session name: " + req.session.uname);
             console.log("success");
-            res.render('home');
+            res.render('index');
 
         }
 
-    },variables.foris_users,name,email,password,devid);
+    },variables.foris_users,name,fname,lname,email,password,devid);
 
 };
 

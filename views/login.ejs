@@ -77,11 +77,21 @@
 
           $scope.signup = function () {
               var in_name = $scope.newusername;
+              var in_fname = $scope.newuserfname;
+              var in_lname = $scope.newuserlname;
               var in_password = $scope.newuserpassword;
               var in_email = $scope.newuseremail;
               var in_deviceID = $scope.newuserdevid;
               if (in_name == null || in_name == "") {
                   alert("Username cannot be empty!!");
+                  return;
+              }
+              if (in_fname == null || in_fname == "") {
+                  alert("User First name cannot be empty!!");
+                  return;
+              }
+              if (in_lname == null || in_lname == "") {
+                  alert("User Last name cannot be empty!!");
                   return;
               }
               if (in_password == null || in_password == "") {
@@ -99,7 +109,7 @@
               $http({
                   method: 'POST',
                   url: '/signup',
-                  data: {"name": in_name, "password": in_password, "email": in_email, "devid": in_deviceID}
+                  data: {"name": in_name, "fname" : in_fname,"lname" : in_lname,"password": in_password, "email": in_email, "devid": in_deviceID}
               }).then(function (response) {
                   if (response.data.status == 409) {
                       alert("Record exists. Please Login");
@@ -168,6 +178,12 @@
           <h1>Create Account</h1>
           <div>
             <input type="text" name="newusername" class="form-control" placeholder="Username" required="" ng-model="newusername"/>
+          </div>
+          <div>
+            <input type="text" name="newuserfname" class="form-control" placeholder="User First Name" required="" ng-model="newuserfname"/>
+          </div>
+          <div>
+            <input type="text" name="newuserlname" class="form-control" placeholder="User Last Name" required="" ng-model="newuserlname"/>
           </div>
           <div>
             <input type="email" name="newuseremail" class="form-control" placeholder="Email" required="" ng-model="newuseremail"/>
