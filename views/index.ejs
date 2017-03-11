@@ -54,6 +54,7 @@
                     }).
                     then(function(response)
                     {
+
                         console.log("Got profile info");
                         $scope.loginusername = angular.fromJson(response.data.result);
 
@@ -66,13 +67,7 @@
                     then(function(response)
                     {
                         console.log("Got sensor info");
-                       // $scope.sensordata = angular.fromJson(response.data.sensor_arr);
-                        //alert($scope.sensordata);
                         $scope.sensordata = response.data.sensor_arr;
-//                         var d1 = $scope.sensordata[0];
-//                         var d2 = d1["sensor"];
-//                         var d3 = d2["Moisture"];
-//                        alert(d3);
 
                     });
                 }

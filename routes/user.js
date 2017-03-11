@@ -42,16 +42,6 @@ function salinity(req,res){
     res.render('salinity', { title: 'salinity' });
 }
 
-// function getSensorData(docID){
-//
-//     request('http://foris.mybluemix.net/HelloWorld?q=webapp_token_many', function (error, response, body) {
-//         if (!error && response.statusCode == 200) {
-//             console.log(body)
-//             return JSON.stringify(body);
-//         }
-//     });
-// }
-
 exports.login = login;
 exports.home = home;
 exports.humidity = humidity;
@@ -213,7 +203,6 @@ exports.sensordata = function(req, res){
     // }, variables.sensor_db, name);
 
 };
-
 
 
 //Logout session
