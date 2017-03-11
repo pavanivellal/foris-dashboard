@@ -1,6 +1,7 @@
 
 var database = require('./database');
 var variables = require('./variables');
+var request = require('request');
 /*
  * GET users listing.
  */
@@ -10,20 +11,56 @@ exports.list = function(req, res){
 };
 
 function login(req,res){
-	res.render('login', { title: 'Login' });
+	res.render('login', { title: variables.page_title + ' Login' });
 }
 
 function home(req,res){
-	res.render('index', { title: 'Home' });
+	res.render('index', { title: variables.page_title + ' Home' });
 }
 
 function humidity(req,res){
 	res.render('humidity', { title: 'Humidity' });
 }
 
+function water(req,res){
+    res.render('water', { title: 'Water' });
+}
+
+function moisture(req,res){
+    res.render('moisture', { title: 'Moisture' });
+}
+
+function temperature(req,res){
+    res.render('temperature', { title: 'Temperature' });
+}
+
+function pH(req,res){
+    res.render('pH', { title: 'pH' });
+}
+
+function salinity(req,res){
+    res.render('salinity', { title: 'salinity' });
+}
+
+// function getSensorData(docID){
+//
+//     request('http://foris.mybluemix.net/HelloWorld?q=webapp_token_many', function (error, response, body) {
+//         if (!error && response.statusCode == 200) {
+//             console.log(body)
+//             return JSON.stringify(body);
+//         }
+//     });
+// }
+
 exports.login = login;
 exports.home = home;
 exports.humidity = humidity;
+exports.water    = water;
+exports.moisture = moisture;
+exports.temperature = temperature;
+exports.pH = pH;
+exports.salinity = salinity;
+
 
 //MAINTAINING SESSION LOGIN
 exports.checklogin = function(req, res) {
@@ -63,7 +100,7 @@ exports.signin = function(req, res) {
                 req.session.uname = results._id;
                 console.log("Session name: " + req.session.uname);
                 console.log("success");
-                res.render('home');
+                res.render('index');
             }
             else
             {
@@ -83,8 +120,10 @@ exports.signin = function(req, res) {
 exports.signup = function(req, res) {
 
     console.log("Inside Signup");
-    console.log(req.param("name", "password", "email", "devid"));
+    console.log(req.param("name", "fname", "lname", "password", "email", "devid"));
     var name = req.param("name"),
+        fname = req.param("fname"),
+        lname = req.param("lname"),
         password = req.param("password"),
         email = req.param("email"),
         devid = req.param("devid");
@@ -103,11 +142,87 @@ exports.signup = function(req, res) {
             req.session.uname = name;
             console.log("Session name: " + req.session.uname);
             console.log("success");
-            res.render('home');
+            res.render('index');
 
         }
 
-    },variables.foris_users,name,email,password,devid);
+    },variables.foris_users,name,fname,lname,email,password,devid);
 
 };
+
+//Get Profile Details////////////////////////////////////////////////
+exports.profileusername = function(req, res){
+    console.log("Inside profileusername");
+    var name = req.session.uname;
+    console.log(req.session.uname);
+    database.fetchData(function(err, results) {
+        if (err) {
+            console.log("Unable to get user details");
+            res.send({
+                "status" : 100
+            });
+        } else {
+            console.log(results);
+            var jsonstr=JSON.stringify(results);
+            console.log(jsonstr);
+            console.log("Entry successfully fethced and displayed on PROFILE GUI");
+            res.send({"result":jsonstr});
+        }
+    }, variables.foris_users, name);
+
+};
+
+//Get Sensor Data////////////////////////////////////////////////
+exports.sensordata = function(req, res){
+    console.log("Inside sensordata");
+    var name = req.session.uname;
+    request('http://foris.mybluemix.net/HelloWorld?q=webapp_token_many', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var jsonstr=JSON.stringify(body);
+            var jsonarray = JSON.parse(body);
+            // var d1 = data[0];
+            // var d2 = d1["sensor"];
+            // var d3 = d2["Moisture"];
+            console.log("Sensor data successfully fethced");
+            console.log("Sensor Data:" + jsonstr);
+            res.send({"sensor_data":jsonstr, "sensor_arr":jsonarray});
+        }
+        else
+        {
+            console.log("Unable to get sensor data");
+            res.send({
+                "status" : 100
+            });
+        }
+    });
+
+    // database.fetchData(function(err, results) {
+    //     if (err) {
+    //         console.log("Unable to get sensor data");
+    //         res.send({
+    //             "status" : 100
+    //         });
+    //     } else {
+    //         console.log(results);
+    //         var jsonstr=JSON.stringify(results.data);
+    //         var data = JSON.parse(results.data);
+    //         console.log(jsonstr);
+    //         console.log("sensor data fetched successfully");
+    //         res.send({"sensor_data":jsonstr});
+    //     }
+    // }, variables.sensor_db, name);
+
+};
+
+
+
+//Logout session
+exports.logoutsession = function(req, res) {
+    console.log("checking logout");
+    req.session.destroy();
+    res.send({
+        "status" : 200
+    });
+};
+
 
