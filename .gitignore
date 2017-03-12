@@ -2,7 +2,6 @@ nbproject
 npm-debug.log
 node_modules
 .sass-cache
-README.md
 .idea
 test_cloudant.js
 home_test.ejs
