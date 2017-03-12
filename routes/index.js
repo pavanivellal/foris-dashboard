@@ -4,6 +4,6 @@ exports.index = function(req, res){
 };
 
 exports.hometest = function(req, res){
-    res.render('home_test', { title: 'foris-io' });
+    res.render('indv_sensors', { title: 'Salinity', json_name: "Salinity", color: "#C71585" });
 };
 

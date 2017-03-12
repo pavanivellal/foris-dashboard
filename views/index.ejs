@@ -374,7 +374,7 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-globe"></i> pH</span>
-              <div class="count">0.00</div>
+              <div class="count">6.00</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-asc"></i>1% </i> From last Week</span>
             </div>
 <!--             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -1063,116 +1063,144 @@ The project used GPS technology to program a combine's route on a farm's durum w
 
     <!--Sensor chart start-->
     <script>
-        $.getJSON('http://foris.mybluemix.net/HelloWorld?q=webapp_token_many', function (data) {
+//        var app = angular.module("forisApp", []);
+//        app.controller("chartCtrl", ['$scope', function( $scope) {
+            $.getJSON('http://foris.mybluemix.net/HelloWorld?q=webapp_token_many', function (data) {
 
-            var moisture = []; //creating moisture dictionary
-            for (var i = 0; i < data.length; i++) {
-                var d1 = data[i];
-                var dattime = d1["timestamp"];  //datetime
-                dattime = new Date(Date.UTC(dattime.substring(0, 4), dattime.substring(5, 2), dattime.substring(8, 2), dattime.substring(11, 2),dattime.substring(14, 2)));
-                var d2 = d1["sensor"];
-                var val = d2["Moisture"];
-                moisture.push({
-                    x: i, y: val
-                });
-            }
+                //Finding average readings
+                var avg_moisture = 0,
+                    avg_temp = 0,
+                    avg_salinity = 0,
+                    avg_pH = 0;
 
-            var temperature = []; //creating Temperature dictionary
-            for (var i = 0; i < data.length; i++) {
-                var d1 = data[i];
-                var dattime = d1["timestamp"];  //datetime
-                dattime = new Date(Date.UTC(dattime.substring(0, 4), dattime.substring(5, 2), dattime.substring(8, 2), dattime.substring(11, 2),dattime.substring(14, 2)));
-                var d2 = d1["sensor"];
-                var val = d2["Temperature"];
-                temperature.push({
-                    x: i, y: val
-                });
-            }
+                var moisture = []; //creating moisture dictionary
+                for (var i = 0; i < data.length; i++) {
+                    var d1 = data[i];
+                    var dattime = d1["timestamp"];  //datetime
+                    dattime = new Date(Date.UTC(dattime.substring(0, 4), (dattime.substring(5, 7) - 1), dattime.substring(8, 10), dattime.substring(11, 13), dattime.substring(14, 16)));
+                    var d2 = d1["sensor"];
+                    var val = d2["Moisture"];
+                    moisture.push({
+                        x: dattime, y: val
+                    });
+                    avg_moisture = avg_moisture + val;
+                }
+                if (data.length != 0) {
+                    avg_moisture = (avg_moisture / data.length);
+                }
 
-            var salinity = []; //creating Salinity dictionary
-            for (var i = 0; i < data.length; i++) {
-                var d1 = data[i];
-                var dattime = d1["timestamp"];  //datetime
-                dattime = new Date(Date.UTC(dattime.substring(0, 4), dattime.substring(5, 2), dattime.substring(8, 2), dattime.substring(11, 2),dattime.substring(14, 2)));
-                var d2 = d1["sensor"];
-                var val = d2["Salinity"];
-                salinity.push({
-                    x: i, y: val
-                });
-            }
 
-            var pH = []; //creating pH dictionary
-            for (var i = 0; i < data.length; i++) {
-                var d1 = data[i];
-                var dattime = d1["timestamp"];  //datetime
-                dattime = new Date(Date.UTC(dattime.substring(0, 4), dattime.substring(5, 2), dattime.substring(8, 2), dattime.substring(11, 2),dattime.substring(14, 2)));
-                var d2 = d1["sensor"];
-                var val = d2["Ph"];
-                pH.push({
-                    x: i, y: val
-                });
-            }
+                var temperature = []; //creating Temperature dictionary
+                for (var i = 0; i < data.length; i++) {
+                    var d1 = data[i];
+                    var dattime = d1["timestamp"];  //datetime
+                    dattime = new Date(Date.UTC(dattime.substring(0, 4), (dattime.substring(5, 7) - 1), dattime.substring(8, 10), dattime.substring(11, 13), dattime.substring(14, 16)));
+                    var d2 = d1["sensor"];
+                    var val = d2["Temperature"];
+                    temperature.push({
+                        x: dattime, y: val
+                    });
+                    avg_temp = avg_temp + val;
+                }
+                if (data.length != 0) {
+                    avg_temp = (avg_temp / data.length);
+                }
 
-            var chart = new CanvasJS.Chart("chartContainer",
-                {
-                    title:{
-                        text: "Sensor Readings",
-                    },
+                var salinity = []; //creating Salinity dictionary
+                for (var i = 0; i < data.length; i++) {
+                    var d1 = data[i];
+                    var dattime = d1["timestamp"];  //datetime
+                    dattime = new Date(Date.UTC(dattime.substring(0, 4), (dattime.substring(5, 7) - 1), dattime.substring(8, 10), dattime.substring(11, 13), dattime.substring(14, 16)));
+                    var d2 = d1["sensor"];
+                    var val = d2["Salinity"];
+                    salinity.push({
+                        x: dattime, y: val
+                    });
+                    avg_salinity = avg_salinity + val;
+                }
+                if (data.length != 0) {
+                    avg_salinity = (avg_salinity / data.length);
+                }
 
-                    axisX:{
-                        title: "time",
-                        gridThickness: 2,
-//                        interval:2,
-//                        intervalType: "seconds",
-//                        valueFormatString: "HH mm ss",
-                        labelAngle: -20
-                    },
-                    toolTip: {
-                        shared: true
-                    },
-                    axisY:{
-                        title: "scale"
-                    },
-                    data: [
-                        {
-                            type: "line",
-                            showInLegend: true,
-                            lineThickness: 2,
-                            name: "Temperature",
-                            markerType: "square",
-                            color: "#F08080",
-                            dataPoints: temperature
+                var pH = []; //creating pH dictionary
+                for (var i = 0; i < data.length; i++) {
+                    var d1 = data[i];
+                    var dattime = d1["timestamp"];  //datetime
+                    dattime = new Date(Date.UTC(dattime.substring(0, 4), (dattime.substring(5, 7) - 1), dattime.substring(8, 10), dattime.substring(11, 13), dattime.substring(14, 16)));
+                    var d2 = d1["sensor"];
+                    var val = d2["Ph"];
+                    pH.push({
+                        x: dattime, y: val
+                    });
+                    avg_pH = avg_pH + val;
+                }
+                if (data.length != 0) {
+                    avg_pH = (avg_pH / data.length);
+                }
+
+                var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        title: {
+                            text: "Sensor Readings",
                         },
-                        {
-                            type: "line",
-                            showInLegend: true,
-                            name: "Moisture",
-                            color: "#20B2AA",
-                            lineThickness: 2,
-                            dataPoints: moisture
-                        },
-                        {
-                            type: "line",
-                            showInLegend: true,
-                            name: "Ph",
-                            color: "#C71585",
-                            lineThickness: 2,
-                            dataPoints: pH
-                        },
-                        {
-                            type: "line",
-                            showInLegend: true,
-                            name: "Salinity",
-                            color: "#FF5733",
-                            lineThickness: 2,
-                            dataPoints: salinity
-                        }
-                    ]
-                });
 
-            chart.render();
+                        axisX: {
+                            title: "Date Time",
+                            gridThickness: 2,
+                            interval: 2,
+                            intervalType: "seconds",
+                            valueFormatString: "HH mm ss",
+                            xValueType: "dateTime",
+                            labelAngle: -20
+                        },
+                        toolTip: {
+                            shared: true
+                        },
+                        axisY: {
+                            title: "scale"
+                        },
+                        data: [
+                            {
+                                type: "line",
+                                showInLegend: true,
+                                lineThickness: 2,
+                                name: "Temperature",
+                                markerType: "square",
+                                color: "#F08080",
+                                dataPoints: temperature
+                            },
+                            {
+                                type: "line",
+                                showInLegend: true,
+                                name: "Moisture",
+                                color: "#20B2AA",
+                                lineThickness: 2,
+                                dataPoints: moisture
+                            },
+                            {
+                                type: "line",
+                                showInLegend: true,
+                                name: "pH",
+                                color: "#C71585",
+                                lineThickness: 2,
+                                dataPoints: pH
+                            },
+                            {
+                                type: "line",
+                                showInLegend: true,
+                                name: "Salinity",
+                                color: "#FF5733",
+                                lineThickness: 2,
+                                dataPoints: salinity
+                            }
+                        ]
+                    });
 
-        });
+                chart.render();
+
+            });
+
+//        }]);
 
     </script>
     <script type="text/javascript" src="/javascripts/canvasjs.min.js"></script>

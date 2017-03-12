@@ -19,27 +19,27 @@ function home(req,res){
 }
 
 function humidity(req,res){
-	res.render('humidity', { title: 'Humidity' });
+    res.render('indv_sensors', { title: 'Humidity', json_name: "Humidity", color: "#20B2AA" });
 }
 
 function water(req,res){
-    res.render('water', { title: 'Water' });
+    res.render('indv_sensors', { title: 'Water Comsumption', json_name: "Water", color: "#20B2AA" });
 }
 
 function moisture(req,res){
-    res.render('moisture', { title: 'Moisture' });
+    res.render('indv_sensors', { title: 'Moisture', json_name: "Moisture", color: "#20B2AA" });
 }
 
 function temperature(req,res){
-    res.render('temperature', { title: 'Temperature' });
+    res.render('indv_sensors', { title: 'Temperature', json_name: "Temperature", color: "#F08080" });
 }
 
 function pH(req,res){
-    res.render('pH', { title: 'pH' });
+    res.render('indv_sensors', { title: 'pH', json_name: "Ph", color: "#C71585" });
 }
 
 function salinity(req,res){
-    res.render('salinity', { title: 'salinity' });
+    res.render('indv_sensors', { title: 'Salinity', json_name: "Salinity", color: "#FF5733" });
 }
 
 exports.login = login;
