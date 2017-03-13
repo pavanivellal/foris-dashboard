@@ -83,7 +83,7 @@
 </head>
 
 <body class="nav-md">
-<div class="container body" ng-app="forisApp" ng-controller="humidityCtrl">>
+<div class="container body" ng-app="forisApp" ng-controller="humidityCtrl">
   <div class="main_container">
     <div class="col-md-3 left_col">
       <div class="left_col scroll-view">
@@ -615,216 +615,216 @@
         <div class="clearfix"></div>
         <br><br>
 
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="x_panel">
-            <div class="x_title">
-              <h2>Readings<small></small></h2>
-              <ul class="nav navbar-right panel_toolbox">
-                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Settings 1</a>
-                    </li>
-                    <li><a href="#">Settings 2</a>
-                    </li>
-                  </ul>
-                </li>
-                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                </li>
-              </ul>
-              <div class="clearfix"></div>
-            </div>
+        <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+          <!--<div class="x_panel">-->
+            <!--<div class="x_title">-->
+              <!--<h2>Readings<small></small></h2>-->
+              <!--<ul class="nav navbar-right panel_toolbox">-->
+                <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+                <!--</li>-->
+                <!--<li class="dropdown">-->
+                  <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                  <!--<ul class="dropdown-menu" role="menu">-->
+                    <!--<li><a href="#">Settings 1</a>-->
+                    <!--</li>-->
+                    <!--<li><a href="#">Settings 2</a>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</li>-->
+                <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
+                <!--</li>-->
+              <!--</ul>-->
+              <!--<div class="clearfix"></div>-->
+            <!--</div>-->
 
-            <div class="x_content">
+            <!--<div class="x_content">-->
 
-              <!-- <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p> -->
+              <!--&lt;!&ndash; <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p> &ndash;&gt;-->
 
-              <div class="table-responsive">
-                <table class="table table-striped jambo_table bulk_action">
-                  <thead>
-                  <tr class="headings">
-                    <th>
-                      <input type="checkbox" id="check-all" class="flat">
-                    </th>
-                    <th class="column-title"><%= title%> </th>
-                    <th class="column-title">Date </th>
-                    <!-- <th class="column-title">Order </th>
-                    <th class="column-title">Bill to Name </th>
-                    <th class="column-title">Status </th> -->
-                    <!-- <th class="column-title">Amount </th> -->
-                    <th class="column-title no-link last"><span class="nobr">Action</span>
-                    </th>
-                    <th class="bulk-actions" colspan="7">
-                      <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-                    </th>
-                  </tr>
-                  </thead>
+              <!--&lt;!&ndash;<div class="table-responsive">&ndash;&gt;-->
+                <!--&lt;!&ndash;<table class="table table-striped jambo_table bulk_action">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<tr class="headings">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th>&ndash;&gt;-->
+                      <!--&lt;!&ndash;<input type="checkbox" id="check-all" class="flat">&ndash;&gt;-->
+                    <!--&lt;!&ndash;</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="column-title"><%= title%> </th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="column-title">Date </th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash; <th class="column-title">Order </th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="column-title">Bill to Name </th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="column-title">Status </th> &ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash; <th class="column-title">Amount </th> &ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="column-title no-link last"><span class="nobr">Action</span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</th>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<th class="bulk-actions" colspan="7">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</th>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</thead>&ndash;&gt;-->
 
-                  <tbody>
-                  <div id="results">
-
-
-                  <script type="text/javascript">
-
-                  for(var i = 0; i<10; i++)
-                  {
-
-                  }
-
-                  //Document to create table dynamically : https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+                  <!--&lt;!&ndash;<tbody>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div id="results">&ndash;&gt;-->
 
 
+                  <!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
 
-                  </script>
+                  <!--&lt;!&ndash;for(var i = 0; i<10; i++)&ndash;&gt;-->
+                  <!--&lt;!&ndash;{&ndash;&gt;-->
+
+                  <!--&lt;!&ndash;}&ndash;&gt;-->
+
+                  <!--&lt;!&ndash;//Document to create table dynamically : https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces&ndash;&gt;-->
 
 
 
+                  <!--&lt;!&ndash;</script>&ndash;&gt;-->
 
-                  <tr class="even pointer">
-                    <td class="a-center ">
-                      <input type="checkbox" class="flat" name="table_records">
-                    </td>
-                    <td class=" ">73%</td>
-                    <td class=" ">Jan 3, 2014 11:47:56 PM </td>
-                    <td class=" last"><a href="#">View</a>
-                    </td>
-                  </tr>
-                  </div>
-                  <!--<tr class="odd pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">70%</td>-->
-                    <!--<td class=" ">Jan 5, 2014 11:30:12 PM</td>-->
-                    <!--&lt;!&ndash; <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>-->
-                    <!--</td>-->
-                    <!--<td class=" ">John Blank L</td>-->
-                    <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$741.20</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">68%</td>-->
-                    <!--<td class=" ">Jan 7, 2014 10:55:33 PM</td>-->
-                    <!--&lt;!&ndash;    <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>-->
-                       <!--</td>-->
-                       <!--<td class=" ">Mike Smith</td>-->
-                       <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="odd pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">53%</td>-->
-                    <!--<td class=" ">Jan 9, 2014 10:52:44 PM</td>-->
-                    <!--&lt;!&ndash;  <td class=" ">121000204</td>-->
-                     <!--<td class=" ">Mike Smith</td>-->
-                     <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$333.21</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">80%</td>-->
-                    <!--<td class=" ">Jan 11, 2014 11:47:56 PM </td>-->
-                    <!--&lt;!&ndash; <td class=" ">121000210</td>-->
-                    <!--<td class=" ">John Blank L</td>-->
-                    <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$7.45</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="odd pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">77%</td>-->
-                    <!--<td class=" ">Jan 13, 2014 11:30:12 PM</td>-->
-                    <!--&lt;!&ndash;   <td class=" ">121000208 <i class="error fa fa-long-arrow-down"></i>-->
-                      <!--</td>-->
-                      <!--<td class=" ">John Blank L</td>-->
-                      <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$741.20</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">62%</td>-->
-                    <!--<td class=" ">Jan 15, 2014 10:55:33 PM</td>-->
-                    <!--&lt;!&ndash; <td class=" ">121000203</td>-->
-                    <!--<td class=" ">Mike Smith</td>-->
-                    <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">60%</td>-->
-                    <!--<td class=" ">Jan 17, 2014 10:55:33 PM</td>-->
-                    <!--&lt;!&ndash; <td class=" ">121000203</td>-->
-                    <!--<td class=" ">Mike Smith</td>-->
-                    <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">72%</td>-->
-                    <!--<td class=" ">Jan 19, 2014 10:55:33 PM</td>-->
-                    <!--&lt;!&ndash; <td class=" ">121000203</td>-->
-                    <!--<td class=" ">Mike Smith</td>-->
-                    <!--<td class=" ">Paid</td> &ndash;&gt;-->
-                    <!--&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">62%</td>-->
-                    <!--<td class=" ">Jan 21, 2014 10:55:33 PM</td>-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  <!--<tr class="even pointer">-->
-                    <!--<td class="a-center ">-->
-                      <!--<input type="checkbox" class="flat" name="table_records">-->
-                    <!--</td>-->
-                    <!--<td class=" ">63%</td>-->
-                    <!--<td class=" ">Jan 23, 2014 10:55:33 PM</td>-->
-                    <!--<td class=" last"><a href="#">View</a>-->
-                    <!--</td>-->
-                  <!--</tr>-->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+
+                  <!--&lt;!&ndash;<tr class="even pointer">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td class="a-center ">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;-->
+                    <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td class=" ">73%</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td class=" ">Jan 3, 2014 11:47:56 PM </td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="odd pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">70%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 5, 2014 11:30:12 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">John Blank L</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$741.20</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">68%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 7, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>&ndash;&gt;&ndash;&gt;-->
+                       <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                       <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Mike Smith</td>&ndash;&gt;&ndash;&gt;-->
+                       <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="odd pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">53%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 9, 2014 10:52:44 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;  <td class=" ">121000204</td>&ndash;&gt;&ndash;&gt;-->
+                     <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Mike Smith</td>&ndash;&gt;&ndash;&gt;-->
+                     <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$333.21</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">80%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 11, 2014 11:47:56 PM </td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class=" ">121000210</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">John Blank L</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$7.45</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="odd pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">77%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 13, 2014 11:30:12 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;   <td class=" ">121000208 <i class="error fa fa-long-arrow-down"></i>&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">John Blank L</td>&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$741.20</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">62%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 15, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class=" ">121000203</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Mike Smith</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">60%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 17, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class=" ">121000203</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Mike Smith</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">72%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 19, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class=" ">121000203</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Mike Smith</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Paid</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; <td class="a-right a-right ">$432.26</td> &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">62%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 21, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<tr class="even pointer">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class="a-center ">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<input type="checkbox" class="flat" name="table_records">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">63%</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" ">Jan 23, 2014 10:55:33 PM</td>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<td class=" last"><a href="#">View</a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</td>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</tr>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;</tbody>&ndash;&gt;-->
+                <!--&lt;!&ndash;</table>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
   <!-- /page content -->
 

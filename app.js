@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
+    , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
@@ -40,6 +40,7 @@ app.post('/signup',user.signup);
 app.get('/profileusername', user.profileusername);
 app.get('/logoutsession',user.logoutsession);
 app.get("/sensordata",user.sensordata);
+// app.get("/sensortopology", users.sensortopology);
 
 //pages
 app.get('/home',user.home);
@@ -49,7 +50,6 @@ app.get('/temperature',user.temperature);
 app.get('/moisture',user.moisture);
 app.get('/pH',user.pH);
 app.get('/salinity',user.salinity);
-app.get('/sensordata',user.sensordata);
 app.get('/hometest', routes.hometest);
 
 

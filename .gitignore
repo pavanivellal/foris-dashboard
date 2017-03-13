@@ -5,3 +5,4 @@ node_modules
 .idea
 test_cloudant.js
 home_test.ejs
+manifest.yml

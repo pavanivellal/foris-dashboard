@@ -354,7 +354,7 @@
             </div> -->
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-sun-o"></i> Average Temperature</span>
-              <div class="count"> 53.6 &#8457;</div>
+              <div class="count" id="avg_temperature"> 53.6 &#8457;</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
             </div>
             <!--<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -364,17 +364,17 @@
             </div>-->
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-tint"></i> Moisture Sensor</span>
-              <div class="count green">1023</div>
+              <div class="count green" id="avg_moisture">1023</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>20% </i> From last Week</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-globe"></i> Soil Salinity</span>
-              <div class="count">963</div>
+              <div class="count" id="avg_salinity">963</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-globe"></i> pH</span>
-              <div class="count">6.00</div>
+              <div class="count" id="avg_pH">6.00</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-asc"></i>1% </i> From last Week</span>
             </div>
 <!--             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -666,163 +666,163 @@
           </div>
 
 
-          <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Recent Activities <small>Sessions</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <div class="dashboard-widget-content">
+          <!--<div class="row">-->
+            <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
+              <!--&lt;!&ndash;<div class="x_panel">&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;<div class="x_title">&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<h2>Recent Activities <small>Sessions</small></h2>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<ul class="nav navbar-right panel_toolbox">&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<li class="dropdown">&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;<ul class="dropdown-menu" role="menu">&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<li><a href="#">Settings 1</a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<li><a href="#">Settings 2</a>&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash;</ul>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;<li><a class="close-link"><i class="fa fa-close"></i></a>&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;</li>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;</ul>&ndash;&gt;&ndash;&gt;-->
+                  <!--&lt;!&ndash;&lt;!&ndash;<div class="clearfix"></div>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="x_content">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div class="dashboard-widget-content">&ndash;&gt;-->
 
-                    <ul class="list-unstyled timeline widget">
-                      <!-- <li>
-                        <div class="block">
-                          <div class="block_content">
-                            <h2 class="title">
-                                              <a>Tips for increasing profitability on your farm in 2017</a>
-                                          </h2>
-                            <div class="byline">
-                              <span>13 hours ago</span> by <a>Ken Hilton</a>
-                            </div>
-                            <p class="excerpt">The Red Wing Software team works with farms around the U.S. every day. And the one conversation that often comes to surface during our conversations is about best management practices for growth on the farm. This is a very timely topic with the start of a new year approaching, as every farming operation should be considering how to make the new year more profitable than the last. While the conversation initially centers on farm accounting software, it quickly becomes clear that the focus really revolves around systems and processes.</a>
-                            </p>
-                          </div>
-                        </div>
-                      </li> -->
-                      <li>
-                        <div class="block">
-                          <div class="block_content">
-                            <h2 class="title">
-                                              <a>Canada's 150th celebrated with agriculture technology</a>
-                                          </h2>
-                            <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
-                            </div>
-                            <p class="excerpt">It will have been 150 years since Canada's confederacy in 1867 when 2017 rolls around. <br>
+                    <!--&lt;!&ndash;<ul class="list-unstyled timeline widget">&ndash;&gt;-->
+                      <!--&lt;!&ndash;&lt;!&ndash; <li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="block">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<div class="block_content">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<h2 class="title">&ndash;&gt;-->
+                                              <!--&lt;!&ndash;<a>Tips for increasing profitability on your farm in 2017</a>&ndash;&gt;-->
+                                          <!--&lt;!&ndash;</h2>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="byline">&ndash;&gt;-->
+                              <!--&lt;!&ndash;<span>13 hours ago</span> by <a>Ken Hilton</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p class="excerpt">The Red Wing Software team works with farms around the U.S. every day. And the one conversation that often comes to surface during our conversations is about best management practices for growth on the farm. This is a very timely topic with the start of a new year approaching, as every farming operation should be considering how to make the new year more profitable than the last. While the conversation initially centers on farm accounting software, it quickly becomes clear that the focus really revolves around systems and processes.</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</li> &ndash;&gt;&ndash;&gt;-->
+                      <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="block">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<div class="block_content">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<h2 class="title">&ndash;&gt;-->
+                                              <!--&lt;!&ndash;<a>Canada's 150th celebrated with agriculture technology</a>&ndash;&gt;-->
+                                          <!--&lt;!&ndash;</h2>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="byline">&ndash;&gt;-->
+                              <!--&lt;!&ndash;<span>13 hours ago</span> by <a>Jane Smith</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p class="excerpt">It will have been 150 years since Canada's confederacy in 1867 when 2017 rolls around. <br>&ndash;&gt;-->
 
-Agriculture and Agri-Food Canada are celebrating the milestone through agriculture technology and an iconic symbol: the maple leaf.<br>
+<!--&lt;!&ndash;Agriculture and Agri-Food Canada are celebrating the milestone through agriculture technology and an iconic symbol: the maple leaf.<br>&ndash;&gt;-->
 
-The project used GPS technology to program a combine's route on a farm's durum wheat crop in Wilcox, Sask. The combine automatically calculated the route once the coordinates were input, allowing the operator to manage the operation hands-free.<a>Read&nbsp;More</a>
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="block">
-                          <div class="block_content">
-                            <h2 class="title">
-                                              <a>Efficient Water usage in Farming</a>
-                                          </h2>
-                            <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
-                            </div>
-                            <p class="excerpt">Find out best practicises to maximize effective water usage in Agriculture… <a>Read&nbsp;More</a>
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-<!--                       <li>
-                        <div class="block">
-                          <div class="block_content">
-                            <h2 class="title">
-                                              <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
-                                          </h2>
-                            <div class="byline">
-                              <span>13 hours ago</span> by <a>Jane Smith</a>
-                            </div>
-                            <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
-                            </p>
-                          </div>
-                        </div>
-                      </li> -->
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-md-8 col-sm-8 col-xs-12">
+<!--&lt;!&ndash;The project used GPS technology to program a combine's route on a farm's durum wheat crop in Wilcox, Sask. The combine automatically calculated the route once the coordinates were input, allowing the operator to manage the operation hands-free.<a>Read&nbsp;More</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                      <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="block">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<div class="block_content">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<h2 class="title">&ndash;&gt;-->
+                                              <!--&lt;!&ndash;<a>Efficient Water usage in Farming</a>&ndash;&gt;-->
+                                          <!--&lt;!&ndash;</h2>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="byline">&ndash;&gt;-->
+                              <!--&lt;!&ndash;<span>13 hours ago</span> by <a>Jane Smith</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p class="excerpt">Find out best practicises to maximize effective water usage in Agriculture… <a>Read&nbsp;More</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                       <li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="block">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<div class="block_content">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<h2 class="title">&ndash;&gt;-->
+                                              <!--&lt;!&ndash;<a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>&ndash;&gt;-->
+                                          <!--&lt;!&ndash;</h2>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="byline">&ndash;&gt;-->
+                              <!--&lt;!&ndash;<span>13 hours ago</span> by <a>Jane Smith</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</li> &ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
 
+            <!--<div class="col-md-8 col-sm-8 col-xs-12">-->
 
-              <div class="row">
 
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="x_panel">
-                    <div class="x_title">
-                      <h2>Farm-field Location <small>geo-presentation</small></h2>
-                      <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Settings 1</a>
-                            </li>
-                            <li><a href="#">Settings 2</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                      <div class="dashboard-widget-content">
-<!--                         <div class="col-md-4 hidden-small">
-                          <h2 class="line_30">125.7k Views from 60 countries</h2>
 
-                          <table class="countries_list">
-                            <tbody>
-                              <tr>
-                                <td>United States</td>
-                                <td class="fs15 fw700 text-right">33%</td>
-                              </tr>
-                              <tr>
-                                <td>France</td>
-                                <td class="fs15 fw700 text-right">27%</td>
-                              </tr>
-                              <tr>
-                                <td>Germany</td>
-                                <td class="fs15 fw700 text-right">16%</td>
-                              </tr>
-                              <tr>
-                                <td>Spain</td>
-                                <td class="fs15 fw700 text-right">11%</td>
-                              </tr>
-                              <tr>
-                                <td>Britain</td>
-                                <td class="fs15 fw700 text-right">10%</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div> -->
-                        <div id="world-map-gdp" class="col-md-12 col-sm-12 col-xs-12" style="height:230px;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
 
-              </div>
+                <!--&lt;!&ndash;<div class="col-md-12 col-sm-12 col-xs-12">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<div class="x_panel">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="x_title">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<h2>Farm-field Location <small>geo-presentation</small></h2>&ndash;&gt;-->
+                      <!--&lt;!&ndash;<ul class="nav navbar-right panel_toolbox">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li class="dropdown">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<ul class="dropdown-menu" role="menu">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<li><a href="#">Settings 1</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<li><a href="#">Settings 2</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                          <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a class="close-link"><i class="fa fa-close"></i></a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                      <!--&lt;!&ndash;<div class="clearfix"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="x_content">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<div class="dashboard-widget-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                         <div class="col-md-4 hidden-small">-->
+                          <!--<h2 class="line_30">125.7k Views from 60 countries</h2>-->
+
+                          <!--<table class="countries_list">-->
+                            <!--<tbody>-->
+                              <!--<tr>-->
+                                <!--<td>United States</td>-->
+                                <!--<td class="fs15 fw700 text-right">33%</td>-->
+                              <!--</tr>-->
+                              <!--<tr>-->
+                                <!--<td>France</td>-->
+                                <!--<td class="fs15 fw700 text-right">27%</td>-->
+                              <!--</tr>-->
+                              <!--<tr>-->
+                                <!--<td>Germany</td>-->
+                                <!--<td class="fs15 fw700 text-right">16%</td>-->
+                              <!--</tr>-->
+                              <!--<tr>-->
+                                <!--<td>Spain</td>-->
+                                <!--<td class="fs15 fw700 text-right">11%</td>-->
+                              <!--</tr>-->
+                              <!--<tr>-->
+                                <!--<td>Britain</td>-->
+                                <!--<td class="fs15 fw700 text-right">10%</td>-->
+                              <!--</tr>-->
+                            <!--</tbody>-->
+                          <!--</table>-->
+                        <!--</div> &ndash;&gt;-->
+                        <!--&lt;!&ndash;<div id="world-map-gdp" class="col-md-12 col-sm-12 col-xs-12" style="height:230px;"></div>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</div>-->
+
+              <!--</div>-->
               <div class="row">
 
 
@@ -1087,6 +1087,8 @@ The project used GPS technology to program a combine's route on a farm's durum w
                 }
                 if (data.length != 0) {
                     avg_moisture = (avg_moisture / data.length);
+                    document.getElementById("avg_moisture").innerHTML = avg_moisture.toFixed(2);
+
                 }
 
 
@@ -1104,6 +1106,7 @@ The project used GPS technology to program a combine's route on a farm's durum w
                 }
                 if (data.length != 0) {
                     avg_temp = (avg_temp / data.length);
+                    document.getElementById("avg_temperature").innerHTML = avg_temp.toFixed(2) + " &#8457;";
                 }
 
                 var salinity = []; //creating Salinity dictionary
@@ -1120,6 +1123,7 @@ The project used GPS technology to program a combine's route on a farm's durum w
                 }
                 if (data.length != 0) {
                     avg_salinity = (avg_salinity / data.length);
+                    document.getElementById("avg_salinity").innerHTML = avg_salinity.toFixed(2);
                 }
 
                 var pH = []; //creating pH dictionary
@@ -1136,6 +1140,7 @@ The project used GPS technology to program a combine's route on a farm's durum w
                 }
                 if (data.length != 0) {
                     avg_pH = (avg_pH / data.length);
+                    document.getElementById("avg_pH").innerHTML = avg_pH.toFixed(2);
                 }
 
                 var chart = new CanvasJS.Chart("chartContainer",

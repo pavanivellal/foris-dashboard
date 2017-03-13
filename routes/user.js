@@ -214,4 +214,11 @@ exports.logoutsession = function(req, res) {
     });
 };
 
+exports.sensortopology = function(req,res) {
+
+
+
+
+}
+
 
